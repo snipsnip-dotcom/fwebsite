@@ -126,3 +126,8 @@ STATIC_ROOT = PurePath.joinpath(BASE_DIR, 'static')
 MEDIA_URL= '/media/'
 MEDIA_ROOT = PurePath.joinpath(BASE_DIR, 'media')
 
+try: 
+    from personal_portfolio.local_settings import *
+
+except ImportError:
+    print("No local file. Looks like you are on production.")
